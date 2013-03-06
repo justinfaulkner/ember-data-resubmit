@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ */
+
+body {
+  margin-top: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Condensed', 'HelveticaNeue-CondensedBold', sans-serif!important;
+}
+
+p, span, input, form, div {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif!important;
+}
+
+#header {
+  height: 90px;
+  background-color: maroon;
+  h1 {
+    color: white
+  };
+}
+
+small.error {
+    padding: 0px!important;
+    padding-left:10px!important;
+    line-height: 20px;
+}
+
+#signup {
+  .row {
+    margin-bottom: 10px;
+  }
+  label {
+    display: none;
+  }
+}
+
+.button {
+  background-color: darkgreen!important;
+  border: 0px!important;
+}

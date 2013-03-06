@@ -1,0 +1,44 @@
+<br />
+
+<div id="signup" class="large-6 columns">
+    <h2>Create an account!</h2>
+
+    <p>
+        This is a great site, you should sign up.
+    </p>
+
+    <h3>Get started &ndash; it's free.</h3>
+
+    <hr />
+
+    {{#formFor controller}}
+        <div class="row">
+            <div class="large-6 columns">
+                {{input firstName placeholder="First Name"}}
+            </div>
+
+            <div class="large-6 columns">
+                {{input lastName placeholder="Last Name"}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                {{input emailAddress placeholder="Email address"}}
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                {{input password placeholder="Password"}}
+            </div>
+        </div>
+
+        {{submit "Sign Up" class="button"}}
+    {{/formFor}}
+</div>
+<div class="large-6 columns">
+    <img src="assets/llamas.jpg" />
+</div>
+
