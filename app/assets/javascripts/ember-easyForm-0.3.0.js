@@ -153,8 +153,6 @@ Ember.EasyForm.Form = Ember.View.extend({
     if (object.validate === undefined) {
       this.get('controller').send('submit');
     } else {
-      console.log(object);
-        debugger;
       object.validate().then(function() {
         if (object.get('isValid') === true) {
           _this.get('controller').send('submit');

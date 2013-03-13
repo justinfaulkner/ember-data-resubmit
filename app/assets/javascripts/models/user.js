@@ -1,7 +1,7 @@
 App.User = DS.Model.extend(Ember.Validations.Mixin);
 App.User.reopen({
-    firstName: DS.attr('string'),
-    lastName: DS.attr('string'),
+    firstName: "",
+    lastName: "",
     emailAddress: DS.attr('string'),
     password: DS.attr('string'),
 
