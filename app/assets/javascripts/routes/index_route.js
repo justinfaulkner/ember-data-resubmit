@@ -1,5 +1,10 @@
 App.IndexRoute = Ember.Route.extend({
-    model: function() {
-        return App.User.createRecord();
-    }
+  model: function() {
+    return null;
+  },
+
+  setupController: function(controller) {
+    controller.startEditing();
+  }
+
 });
