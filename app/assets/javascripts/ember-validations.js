@@ -144,7 +144,8 @@ Ember.Validations.Mixin = Ember.Mixin.create({
     }
     for(index1 = 0; index1 < toRun.length; index1++) {
       property = toRun[index1];
-      this.errors.set(property, undefined);
+      try {this.errors.set(property, undefined)}
+      catch(e){}
       delete this.errors[property];
 
       for(validator in object.validations[property]) {

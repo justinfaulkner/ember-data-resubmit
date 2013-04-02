@@ -200,7 +200,7 @@ Ember.EasyForm.Input = Ember.View.extend({
     if(this.get('context').get('errors') !== undefined) {
       this.reopen({
         error: function() {
-          return this.get('context').get('errors').get(this.property) !== undefined;
+          return this.get('context').get('errors.'+this.property) !== undefined;
         }.property('context.errors.'+this.property)
       });
     }
