@@ -7,24 +7,14 @@
         This is a great site, you should sign up.
     </p>
 
-    <h3>Get started &ndash; it's free.</h3>
+    <p>Enter an email address with @example.com to trigger the server-side validation error.</p>
 
     <hr />
 
     {{#formFor controller}}
         <div class="row">
-            <div class="large-6 columns">
-                {{input firstName placeholder="First Name"}}
-            </div>
-
-            <div class="large-6 columns">
-                {{input lastName placeholder="Last Name"}}
-            </div>
-        </div>
-
-        <div class="row">
             <div class="large-12 columns">
-                {{input emailAddress placeholder="Email address"}}
+                {{input username placeholder="Email address"}}
             </div>
 
         </div>

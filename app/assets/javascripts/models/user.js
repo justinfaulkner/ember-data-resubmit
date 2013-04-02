@@ -1,19 +1,11 @@
 App.User = DS.Model.extend(Ember.Validations.Mixin);
 App.User.reopen({
-  firstName: "",
-  lastName: "",
-  emailAddress: DS.attr('string'),
+  username: DS.attr('string'),
   password: DS.attr('string'),
   profile: DS.belongsTo('App.Profile'),
 
   validations: {
-      firstName: {
-          presence: true
-      },
-      lastName: {
-          presence: true
-      },
-      emailAddress: {
+      username: {
           presence: true
       },
       password: {

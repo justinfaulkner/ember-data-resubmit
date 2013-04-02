@@ -2,4 +2,6 @@ App.Router.reopen({
     location: "history"
 });
 
-App.Router.map(function() {});
+App.Router.map(function() {
+  this.route("success");
+});
