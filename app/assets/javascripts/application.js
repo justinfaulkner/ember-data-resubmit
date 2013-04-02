@@ -16,8 +16,8 @@
 //= require handlebars
 //= require ember
 //= require ember-data
-//= require ember-easyForm-0.3.0
-//= require ember-validations-0.2.1
+//= require ember-easyForm
+//= require ember-validations
 //= require_self
 //= require app
 App = Ember.Application.create({
