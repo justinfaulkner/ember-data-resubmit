@@ -9,6 +9,7 @@ App.IndexController = Ember.ObjectController.extend({
   submit: function(user){
     console.log("submitting!");
     this.transaction.commit();
+    this.transaction = null;
   },
 
   _transitionOnSuccess: function(stuff) {
@@ -16,5 +17,13 @@ App.IndexController = Ember.ObjectController.extend({
       console.log("_transitionOnSuccess");
       this.transitionToRoute('success');
     }
-  }.observes('content.id')
+  }.observes('content.id'),
+
+  stopEditing: function() {
+    // rollback the local transaction if it hasn't already been cleared
+    if (this.transaction) {
+      this.transaction.rollback();
+      this.transaction = null;
+    }
+  }
 });

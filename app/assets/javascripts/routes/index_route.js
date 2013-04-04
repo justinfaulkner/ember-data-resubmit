@@ -5,6 +5,10 @@ App.IndexRoute = Ember.Route.extend({
 
   setupController: function(controller) {
     controller.startEditing();
+  },
+
+  deactivate: function() {
+    this.controllerFor('index').stopEditing();
   }
 
 });
