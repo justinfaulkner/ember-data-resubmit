@@ -596,6 +596,7 @@ DS.Transaction = Ember.Object.extend({
     var iterate = function(records) {
       var set = records.copy();
       set.forEach(function (record) {
+        console.log("Transaction: " + record.get("transaction"));
         record.send('willCommit');
       });
       return set;
@@ -616,7 +617,10 @@ DS.Transaction = Ember.Object.extend({
 
     this.removeCleanRecords();
 
-    if (!commitDetails.created.isEmpty() || !commitDetails.updated.isEmpty() || !commitDetails.deleted.isEmpty() || !relationships.isEmpty()) {
+    var need_to_create = !commitDetails.created.isEmpty()
+    console.log("Records to be created in transaction " + this + "?")
+    console.log(need_to_create);
+    if (need_to_create || !commitDetails.updated.isEmpty() || !commitDetails.deleted.isEmpty() || !relationships.isEmpty()) {
       if (adapter && adapter.commit) { adapter.commit(store, commitDetails); }
       else { throw fmt("Adapter is either null or does not implement `commit` method", this); }
     }
@@ -764,6 +768,7 @@ DS.Transaction = Ember.Object.extend({
   */
   recordBecameDirty: function(bucketType, record) {
     this.removeFromBucket('clean', record);
+    console.log("In recordBecameDirty... transaction: " + record.get('transaction'));
     this.addToBucket(bucketType, record);
   },
 
@@ -8200,7 +8205,7 @@ DS.RESTAdapter = DS.Adapter.extend({
 
     var data = {};
     data[root] = this.serialize(record, { includeId: true });
-
+    console.log("createRecord ajax call! Transaction: "+ record.get("transaction"));
     this.ajax(this.buildURL(root), "POST", {
       data: data,
       context: this,

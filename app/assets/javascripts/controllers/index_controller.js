@@ -9,7 +9,6 @@ App.IndexController = Ember.ObjectController.extend({
   submit: function(user){
     console.log("submitting!");
     this.transaction.commit();
-    this.transaction = null;
   },
 
   _transitionOnSuccess: function(stuff) {
